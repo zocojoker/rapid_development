@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true"> 
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/uic.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/uic.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- project default level -->
+    <logger name="com.alibaba.sharing.platform" level="INFO" />
+
+    <!-- rest template logger-->
+    <logger name="org.springframework.web.client.RestTemplate" level="DEBUG" />
+    <logger name="org.springframework" level="DEBUG" />
+
+    <!--log4jdbc -->
+    <logger name="jdbc.sqltiming" level="DEBUG"/>
+    <logger name="log4j.logger.java.sql" level="DEBUG"/>
+    <logger name="org.mybatis" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+        <appender-ref ref="rollingFile" />
+    </root>
+</configuration>
