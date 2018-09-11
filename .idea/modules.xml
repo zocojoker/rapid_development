@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/configuration/configuration.iml" filepath="$PROJECT_DIR$/configuration/configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration_web/configuration_web.iml" filepath="$PROJECT_DIR$/configuration_web/configuration_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rapid_development.iml" filepath="$PROJECT_DIR$/rapid_development.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rapid_java/rapid_java.iml" filepath="$PROJECT_DIR$/rapid_java/rapid_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rapid_util/rapid_util.iml" filepath="$PROJECT_DIR$/rapid_util/rapid_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rapid_web/rapid_web.iml" filepath="$PROJECT_DIR$/rapid_web/rapid_web.iml" />
+    </modules>
+  </component>
+</project>
