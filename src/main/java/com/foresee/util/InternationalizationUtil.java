@@ -3,6 +3,8 @@
  */
 package com.foresee.util;
 
+import java.util.Locale;
+
 /**
  * <pre>
  * 处理同国际化相关的细节。
@@ -54,5 +56,9 @@ public class InternationalizationUtil {
 		}
 		return str.toLowerCase();
 	}
-
+	public static void  main(String[] args){
+		Locale defaultLocal = Locale.getDefault();
+		System.out.println(defaultLocal.getCountry());
+		System.out.println(defaultLocal.getLanguage());
+	}
 }

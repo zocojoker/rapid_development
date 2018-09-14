@@ -7,7 +7,7 @@ package com.foresee.exception;
  * @author foresee
  * @creat 2018-04-08-14:24
  */
-public class AdminException extends MyBaseException {
+public class AdminException extends BaseException {
     public AdminException() {
         super();
     }

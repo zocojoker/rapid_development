@@ -9,9 +9,8 @@
         <module>rapid_util</module>
         <module>rapid_web</module>
         <module>rapid_java</module>
-        <module>configuration</module>
-        <module>configuration_web</module>
-        <module>configuration_web</module>
+        <!--<module>configuration</module>
+        <module>configuration_web</module>-->
     </modules>
     <packaging>pom</packaging>
 
@@ -139,11 +138,11 @@
             <artifactId>commons-fileupload</artifactId>
             <version>1.3.1</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.zoco</groupId>
             <artifactId>configuration</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
@@ -159,6 +158,21 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.0.1.RELEASE</version>
         </dependency>
     </dependencies>
 

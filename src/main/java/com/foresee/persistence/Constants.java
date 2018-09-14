@@ -8,7 +8,7 @@ package com.foresee.persistence;
  * <pre>
  * 程序的中文名称。
  * </pre>
- * @author luxiaocheng luxiaocheng@foresee.cn
+ * @author zoco
  * @version 1.00.00
  * <pre>
  * 修改记录

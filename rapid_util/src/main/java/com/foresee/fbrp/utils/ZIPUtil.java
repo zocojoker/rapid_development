@@ -3,7 +3,7 @@
  * @author <a href="mailto:chenqiang@foresee.com.cn">chenqiang</a>
  * $Id: ZIPUtil.java 4336 2009-07-19 03:21:39Z chenqiang@foresee.com.cn $
  */
-package com.foresee.swy.util;
+package com.foresee.fbrp.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

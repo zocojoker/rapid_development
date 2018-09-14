@@ -5,7 +5,7 @@ package com.foresee.dao;
 
 import java.util.Date;
 
-import com.foresee.exception.MyBaseException;
+import com.foresee.exception.BaseException;
 
 /**
  * 
@@ -31,8 +31,8 @@ public interface IServerTime {
 	 * 
 	 * @return Date 返回服务器当前时间
 	 * 
-	 * @throws MyBaseException FBRP异常
+	 * @throws BaseException FBRP异常
 	 */
-	public Date getServerDateTime() throws MyBaseException;
+	public Date getServerDateTime() throws BaseException;
 
 }

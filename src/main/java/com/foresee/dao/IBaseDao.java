@@ -1,6 +1,6 @@
 package com.foresee.dao;
 
-import com.foresee.exception.MyBaseException;
+import com.foresee.exception.BaseException;
 import com.foresee.vo.ValueObject;
 import org.mybatis.spring.SqlSessionTemplate;
 
@@ -40,9 +40,9 @@ public interface IBaseDao {
      *
      * @return 返回 sqlSessionTemplate。
      *
-     * @throws MyBaseException FBRP异常
+     * @throws BaseException FBRP异常
      */
-    public abstract SqlSessionTemplate getSqlSessionTemplate() throws MyBaseException;
+    public abstract SqlSessionTemplate getSqlSessionTemplate() throws BaseException;
 
     /**
      * 删除记录。

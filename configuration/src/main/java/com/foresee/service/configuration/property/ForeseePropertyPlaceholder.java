@@ -1,17 +1,8 @@
 package com.foresee.service.configuration.property;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * 
- */
-
-import java.util.Map;
-import java.util.Properties;
-import java.util.Timer;
-import java.util.TimerTask;
-
+import com.foresee.service.configuration.constants.ConfigurationConstants;
+import com.foresee.service.configuration.utils.HttpClientConnectionManager;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
@@ -19,10 +10,11 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.util.StringUtils;
 
-import com.foresee.service.configuration.constants.ConfigurationConstants;
-import com.foresee.service.configuration.utils.HttpClientConnectionManager;
+import java.util.*;
 
-import lombok.extern.slf4j.Slf4j;
+/**
+ *
+ */
 
 /**
  * @project configuration
@@ -109,7 +101,7 @@ public class ForeseePropertyPlaceholder extends PropertyPlaceholderConfigurer {
 //			confCenterAddr = "http://10.10.0.102:6789/confCenter/conf";
 //			confCenterAddr = "http://172.18.111.11:6789/conf-center-web/conf";
 //			confCenterAddr = "http://conf.dzswj.foresee:6789/confCenter/conf";
-			confCenterAddr = "http://127.0.0.1:8081/confCenter/com.foresee.conf";
+			confCenterAddr = "http://127.0.0.1:8081/confCenter/conf";
 		}
 		String confTable = System.getProperty("confTable");//-DconfTable=conf_default_kftestxml
 		//请求配置中心获取配置表信息，然后载入dbPropertyValues中

@@ -3,7 +3,7 @@
  */
 package com.foresee.dao;
 
-import com.foresee.exception.MyBaseException;
+import com.foresee.exception.BaseException;
 
 /**
  * 
@@ -29,18 +29,18 @@ public interface IKeyGen {
 	 * 
 	 * @return Long 基于IP地址返回唯一UUID
 	 * 
-	 * @throws MyBaseException FBRP异常。
+	 * @throws BaseException FBRP异常。
 	 */
-	public Long getLongKey() throws MyBaseException;
+	public Long getLongKey() throws BaseException;
 
 	/**
 	 * 基于当前时间生成32位UUID。
 	 * 
 	 * @return String 基于当前时间生成32位UUID
 	 * 
-	 * @throws MyBaseException FBRP异常。
+	 * @throws BaseException FBRP异常。
 	 */
-	public String getUUIDKey() throws MyBaseException;
+	public String getUUIDKey() throws BaseException;
 
 	/**
 	 * 基于对象HashCode生成32位UUID。

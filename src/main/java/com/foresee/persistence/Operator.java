@@ -9,7 +9,7 @@ package com.foresee.persistence;
  * 对应到SQL运算符表达式。
  * </pre>
  * 
- * @author luxiaocheng luxiaocheng@foresee.cn
+ * @author zoco
  * @version 1.00.00
  * 
  *          <pre>
@@ -81,6 +81,6 @@ public enum Operator {
 		default:
 			return "";
 		}
-	};
+	}
 
 }

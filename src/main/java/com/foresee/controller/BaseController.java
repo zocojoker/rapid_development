@@ -3,7 +3,7 @@ package com.foresee.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.foresee.exception.MyBaseException;
+import com.foresee.exception.BaseException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
@@ -201,15 +201,15 @@ public class BaseController extends MultiActionController {
 	 * @param para
 	 * @return
 	 */
-	protected Integer getParameterToIntRetNull(HttpServletRequest request, String para) throws MyBaseException {
+	protected Integer getParameterToIntRetNull(HttpServletRequest request, String para) throws BaseException {
 		Integer parameter = null;
 		Object object = request.getParameter(para);
 		if (null != object) {
 			try{
 				parameter = new Integer(object.toString());	
-			}catch (MyBaseException e) {
+			}catch (BaseException e) {
 				log.error("获取参数值，并转换为int类型异常，AdminException异常信息为{}", e.getMessage(), e);
-				throw new MyBaseException("获取参数值，并转换为int类型异常", e);
+				throw new BaseException("获取参数值，并转换为int类型异常", e);
 			}
 		}
 		return parameter;
@@ -238,15 +238,15 @@ public class BaseController extends MultiActionController {
 	 * @param para
 	 * @return
 	 */
-	protected Double getParameterToDoubleRetNull(HttpServletRequest request, String para) throws MyBaseException {
+	protected Double getParameterToDoubleRetNull(HttpServletRequest request, String para) throws BaseException {
 		Double parameter = null;
 		Object object = request.getParameter(para);
 		if (null != object) {
 			try{
 				parameter = new Double(object.toString());
-			}catch (MyBaseException e) {
+			}catch (BaseException e) {
 				log.error("获取参数值，并转换为double类型异常，AdminException异常信息为{}", e.getMessage(), e);
-				throw new MyBaseException("获取参数值，并转换为double类型异常", e);
+				throw new BaseException("获取参数值，并转换为double类型异常", e);
 			}
 		}
 		return parameter;
@@ -258,12 +258,12 @@ public class BaseController extends MultiActionController {
 	 * @param para
 	 * @return
 	 */
-	protected String getParamStr(HttpServletRequest request, String para) throws MyBaseException {
+	protected String getParamStr(HttpServletRequest request, String para) throws BaseException {
 		try {
 			request.setCharacterEncoding("utf-8");
 		} catch (UnsupportedEncodingException e) {
 			log.error("增加获取字符串参数方法异常，AdminException异常信息为{}", e.getMessage(), e);
-			throw new MyBaseException("增加获取字符串参数方法异常", e);
+			throw new BaseException("增加获取字符串参数方法异常", e);
 		}
 		return StringUtils.hasText(request.getParameter(para)) ? request
 				.getParameter(para) : "";
@@ -280,7 +280,7 @@ public class BaseController extends MultiActionController {
 				.getParameter(para) : null;
 	}
 	
-	protected void renderJson(HttpServletResponse response,String jsonResponse) throws MyBaseException {
+	protected void renderJson(HttpServletResponse response,String jsonResponse) throws BaseException {
 		PrintWriter printWriter = null;
 		try {
 			response.setContentType("text/html");//解决获取ajax请求返回xml结果
@@ -289,7 +289,7 @@ public class BaseController extends MultiActionController {
 			printWriter.flush();
 		} catch (IOException e) {
 			log.error("增加获取字符串参数方法异常，AdminException异常信息为{}", e.getMessage(), e);
-			throw new MyBaseException("增加获取字符串参数方法异常", e);
+			throw new BaseException("增加获取字符串参数方法异常", e);
 		} finally {
 			if (printWriter != null) {
 				IOUtils.closeQuietly(printWriter);

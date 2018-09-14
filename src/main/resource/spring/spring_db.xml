@@ -1,63 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean id="fbrp_infrastructure_jdbcTemplate_4read" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="${defaultDs.4read}"/>
-        <property name="fetchSize" value="${jdbc.fetchSize}"/>
+    <bean id="rapid_infrastructure_propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlalceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:rapid.properties</value>
+                <value>classpath*:META-INF/resources/properties/*.properties</value>
+            </list>
+        </property>
     </bean>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close" >
+        <property name="url"
+                  value="${jdbc.url}" />
+        <property name="username" value="${jdbc.user}" />
+        <property name="password" value="${jdbc.password}" />
 
-    <bean id="fbrp_infrastructure_simpleJdbcTemplate_4read"
-          class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
-        <constructor-arg ref="fbrp_infrastructure_jdbcTemplate_4read"/>
+        <property name="driverClassName" value="${configration.jdbc.driverName}" />
+
+        <property name="filters" value="stat" />
+
+        <property name="maxActive" value="50" />
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="minIdle" value="1" />
+
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
     </bean>
+    <!--<bean name="dataSource" id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" /> <property
+        name="url" value="jdbc:mysql://localhost/dzbst?characterEncoding=utf8"
+        /> <property name="username" value="${database.username}" /> <property name="password" value="root"
+        /> </bean> -->
 
-    <bean id="fbrp_infrastructure_sqlSessionFactoryBean_4read" class="com.foresee.fbrp.infrastructure.persistence.factory.FbrpSqlSessionFactoryBean">
-        <property name="configLocation">
-            <value>classpath:/META-INF/conf/mybatis/fbrp-infrastructure-config.xml</value>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource">
+            <ref bean="dataSource" />
         </property>
-        <property name="mapperLocations">
-            <value>classpath*:/META-INF/conf/mybatis/*-mapper.xml</value>
-        </property>
-        <property name="dataSource" ref="${defaultDs.4read}" />
     </bean>
-
-    <bean id="fbrp_infrastructure_sqlSessionTemplate_4read" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="fbrp_infrastructure_sqlSessionFactoryBean_4read"/>
-    </bean>
-
-    <bean id="fbrp_infrastructure_dataSourceDBCP_4read" class="org.apache.commons.dbcp.BasicDataSource"
-          destroy-method="close" lazy-init="true" primary="true">
-        <property name="driverClassName">
-            <value>${jdbc.driverClassName}</value>
-        </property>
-        <property name="url">
-            <value>${jdbc.url.4read}</value>
-        </property>
-        <property name="username">
-            <value>${jdbc.username.4read}</value>
-        </property>
-        <property name="password">
-            <value>${jdbc.password.4read}</value>
-        </property>
-        <property name="validationQuery">
-            <value>${jdbc.validationQuery}</value>
-        </property>
-        <property name="initialSize" value="${jdbc.initialSize}"/>
-        <property name="maxActive" value="${jdbc.maxActive}"/>
-        <property name="minIdle" value="${jdbc.minIdle}"/>
-        <property name="maxIdle" value="${jdbc.maxIdle}"/>
-    </bean>
-
-    <bean id="fbrp_infrastructure_dataSourceJNDI_4read" class="org.springframework.jndi.JndiObjectFactoryBean"
-          lazy-init="true">
-        <property name="jndiName">
-            <value>${dataSource.jndiName.4read}</value>
-        </property>
-        <property name="lookupOnStartup" value="true" />
-        <property name="proxyInterface" value="javax.sql.DataSource" />
-        <property name="resourceRef" value="false" />
-    </bean>
-
 </beans>

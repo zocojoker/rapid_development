@@ -4,25 +4,22 @@
  */
 package com.foresee.conf.web.controller;
 
-import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.foresee.conf.constants.ConfigurationConstants;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.foresee.conf.constants.ConfigurationConstants;
-
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @project web-center-com.foresee.conf
@@ -45,6 +42,8 @@ public class ConfController {
 	@RequestMapping(value="/**/*")
 	public void conf(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String action = request.getParameter("action");
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		if (ConfigurationConstants.ACTION_RELOAD.equals(action)) {// 重载配置文件
 			dbPropertyValues.clear();
 			dbPropertyTimout.clear();
