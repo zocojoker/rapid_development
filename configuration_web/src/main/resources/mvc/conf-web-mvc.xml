@@ -15,7 +15,7 @@
 
 	<!-- ①扫描@Controller注解 -->
 	<!-- Controller控制类-->
-	<context:component-scan base-package="com.foresee.conf" use-default-filters="false">
+	<context:component-scan base-package="com.zoco.conf" use-default-filters="false">
 		<context:include-filter type="regex"
 			expression=".*.*.controller.*Controller" />
 	</context:component-scan>

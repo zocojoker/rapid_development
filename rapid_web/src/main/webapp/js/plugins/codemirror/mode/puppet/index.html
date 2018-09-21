@@ -61,12 +61,12 @@ class automysqlbackup (
   }
 
 # Create an example backup file, useful for reference
-  file { "${etc_dir}/automysqlbackup.com.foresee.conf.example":
+  file { "${etc_dir}/automysqlbackup.com.zoco.conf.example":
     ensure => file,
     owner => 'root',
     group => 'root',
     mode => '0660',
-    source => 'puppet:///modules/automysqlbackup/automysqlbackup.com.foresee.conf',
+    source => 'puppet:///modules/automysqlbackup/automysqlbackup.com.zoco.conf',
   }
 
 # Add files from the developer

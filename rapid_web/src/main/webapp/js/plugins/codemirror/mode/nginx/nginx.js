@@ -173,6 +173,6 @@ CodeMirror.defineMode("nginx", function(config) {
   };
 });
 
-CodeMirror.defineMIME("text/nginx", "text/x-nginx-com.foresee.conf");
+CodeMirror.defineMIME("text/nginx", "text/x-nginx-com.zoco.conf");
 
 });
