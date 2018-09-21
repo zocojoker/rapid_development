@@ -1,7 +1,7 @@
 /**
  * Copyright(c) Foresee Science & Technology Ltd. 
  */
-package com.foresee.fbrp.util;
+package com.zoco.fbrp.util;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
  * <pre>
  * 程序的中文名称。
  * </pre>
- * @author linjunxiong  linjunxiong@foresee.cn
+ * @author linjunxiong  linjunxiong@zoco.cn
  * @version 1.00.00
  * <pre>
  * 修改记录

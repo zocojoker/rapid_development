@@ -1,4 +1,4 @@
-package com.foresee.dao.impl;
+package com.zoco.dao.impl;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,12 +7,12 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import com.foresee.dao.IBaseDao;
-import com.foresee.dao.IKeyGen;
-import com.foresee.dao.IServerTime;
-import com.foresee.persistence.Order;
-import com.foresee.vo.PagedResult;
-import com.foresee.vo.ValueObject;
+import com.zoco.dao.IBaseDao;
+import com.zoco.dao.IKeyGen;
+import com.zoco.dao.IServerTime;
+import com.zoco.persistence.Order;
+import com.zoco.vo.PagedResult;
+import com.zoco.vo.ValueObject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.session.RowBounds;
@@ -24,7 +24,7 @@ import org.springframework.util.StringUtils;
 /**
  * 基础Dao层实现类(服务实现类必须继承的基类。)
  *
- * @author foresee
+ * @author zoco
  * @creat 2018-04-11-10:12
  */
 public class BaseDaoImpl extends ApplicationObjectSupport implements IBaseDao {

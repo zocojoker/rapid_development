@@ -1,14 +1,14 @@
 /**
  * Copyright(c) Foresee Science & Technology Ltd. 
  */
-package com.foresee.swy.util;
+package com.zoco.swy.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-import com.foresee.fbrp.utils.InternationalizationUtil;
+import com.zoco.fbrp.utils.InternationalizationUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -17,7 +17,7 @@ import org.apache.commons.logging.LogFactory;
  * <pre>
  * 基于反射的实用类。
  * </pre>
- * @author luoshifei  luoshifei@foresee.cn
+ * @author luoshifei  luoshifei@zoco.cn
  * @version 1.00.00
  * <pre>
  * 修改记录
