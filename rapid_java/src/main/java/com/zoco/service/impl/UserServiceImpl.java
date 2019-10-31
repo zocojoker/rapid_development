@@ -6,12 +6,12 @@ import com.zoco.entity.User;
 import com.zoco.exception.RapidException;
 import com.zoco.mapper.UserMapper;
 import com.zoco.service.IUserService;
-import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -87,7 +87,7 @@ public class UserServiceImpl implements IUserService {
     public PagedResultEntity<User> selectPage(PagedResultEntity<User> pagedResult) {
         List list;
         try {
-            Map<String, Integer> map = new HashedMap();
+            Map<String, Integer> map = new HashMap<>();
             map.put("beginIndex", pagedResult.getStart());
             map.put("endIndex", pagedResult.getLimit());
             list = userMapper.selectPage(map);

@@ -1,17 +1,10 @@
 package com.zoco.dao.impl;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.sql.DataSource;
-
 import com.zoco.dao.IBaseDao;
 import com.zoco.dao.IKeyGen;
 import com.zoco.dao.IServerTime;
 import com.zoco.persistence.Order;
-import com.zoco.vo.PagedResult;
+import com.zoco.vo.PagedResultEntity;
 import com.zoco.vo.ValueObject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,6 +12,12 @@ import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.support.ApplicationObjectSupport;
 import org.springframework.util.StringUtils;
+
+import javax.sql.DataSource;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -182,7 +181,7 @@ public class BaseDaoImpl extends ApplicationObjectSupport implements IBaseDao {
      * @param <T>       ValueObject
      * @return PagedResult<T>
      */
-    public <T> PagedResult<T> pagedQeury(String key, Map<String, Object> map,
+    public <T> PagedResultEntity<T> pagedQeury(String key, Map<String, Object> map,
                                          int pageIndex, int pageSize) {
 
         RowBounds rb = new RowBounds(pageIndex, pageSize);
@@ -197,7 +196,7 @@ public class BaseDaoImpl extends ApplicationObjectSupport implements IBaseDao {
         }
         Long total = (Long) this.getSqlSessionTemplate().selectOne(statement2,
                 map);
-        return new PagedResult<T>(list, total);
+        return new PagedResultEntity<>();
     }
 
     /**

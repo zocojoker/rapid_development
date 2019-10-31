@@ -151,11 +151,11 @@
             <artifactId>rapid_java</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.zoco</groupId>
             <artifactId>configuration</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>com.zoco</groupId>
             <artifactId>maven-base</artifactId>

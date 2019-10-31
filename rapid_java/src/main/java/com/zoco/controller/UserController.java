@@ -1,10 +1,10 @@
 package com.zoco.controller;
 
-import com.zoco.vo.ResponseEntity;
 import com.zoco.common.Code;
 import com.zoco.entity.User;
 import com.zoco.service.IUserService;
-import org.apache.commons.collections.map.HashedMap;
+import com.zoco.vo.ResponseEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -21,6 +22,7 @@ import java.util.Map;
  * @author zoco
  * @creat 2018-09-21-11:32
  */
+@Slf4j
 @Controller
 @RequestMapping("/user")
 public class UserController extends BaseController {
@@ -33,7 +35,7 @@ public class UserController extends BaseController {
         response.setCharacterEncoding("utf-8");
         ResponseEntity resEntity = new ResponseEntity();
         HttpSession session = request.getSession();
-        Map map = new HashedMap();
+        Map map = new HashMap();
         try {
             user = userService.Login(user.getUsername(), user.getPassword());
             if (user == null) {
@@ -52,6 +54,14 @@ public class UserController extends BaseController {
             resEntity.setCode(Code.CODE_SERVER_ERROR);
             resEntity.setMessage(e.getMessage());
             log.error("登录异常：", e.getMessage(), e);
+            return resEntity;
         }
+        return null;
+    }
+    public void logOut(HttpServletRequest request,HttpServletResponse response){
+        response.setCharacterEncoding("UTF-8");
+        //String userId = this.getParamStr(request,"userId");
+        HttpSession session = request.getSession();
+        session.removeAttribute("userInfo");
     }
 }
