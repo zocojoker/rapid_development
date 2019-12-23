@@ -11,6 +11,7 @@
         <module name="configuration_web" />
         <module name="mybatis-generator-gui-master" />
         <module name="rapid_java" />
+        <module name="rapid_practice" />
         <module name="rapid_util" />
         <module name="rapid_web" />
         <module name="rapid_web1" />
@@ -19,13 +20,11 @@
     <bytecodeTargetLevel>
       <module name="configuration" target="1.7" />
       <module name="configuration_web" target="1.7" />
-      <module name="mybatis-generator-gui" target="1.8" />
-      <module name="mybatis-generator-gui-master" target="1.8" />
       <module name="rapid_development" target="1.7" />
       <module name="rapid_java" target="1.7" />
+      <module name="rapid_practice" target="1.8" />
       <module name="rapid_util" target="1.7" />
       <module name="rapid_web" target="1.7" />
-      <module name="rapid_web1" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

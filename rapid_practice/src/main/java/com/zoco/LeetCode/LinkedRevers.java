@@ -7,12 +7,12 @@ package com.zoco.LeetCode;
  * @creat 2019-11-03-13:48
  */
 public class LinkedRevers {
-    public static class Node<E> {
+    static class Node<E> {
         E item;
-        LinkedRevers.Node<E> next;
+        Node<E> next;
         //LinkedRevers.Node<E> prev;
 
-        Node(E element, LinkedRevers.Node<E> next) {
+        Node(E element, Node<E> next) {
             this.item = element;
             this.next = next;
             //this.prev = prev;
@@ -39,7 +39,7 @@ public class LinkedRevers {
     }
 
     public static void main(String[] args) {
-        LinkedRevers.Node<Integer> node = new Node<>(1, new Node<Integer>(2, new Node<Integer>(3, null)));
+        Node<Integer> node = new Node<>(1, new Node<Integer>(2, new Node<Integer>(3, null)));
         Node n = revers(node);
         while (n != null) {
             System.out.println(n.item);

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/configuration_web/configuration_web.iml" filepath="$PROJECT_DIR$/configuration_web/configuration_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/rapid_development.iml" filepath="$PROJECT_DIR$/rapid_development.iml" />
       <module fileurl="file://$PROJECT_DIR$/rapid_java/rapid_java.iml" filepath="$PROJECT_DIR$/rapid_java/rapid_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rapid_practice/rapid_practice.iml" filepath="$PROJECT_DIR$/rapid_practice/rapid_practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/rapid_util/rapid_util.iml" filepath="$PROJECT_DIR$/rapid_util/rapid_util.iml" />
       <module fileurl="file://$PROJECT_DIR$/rapid_web/rapid_web.iml" filepath="$PROJECT_DIR$/rapid_web/rapid_web.iml" />
     </modules>

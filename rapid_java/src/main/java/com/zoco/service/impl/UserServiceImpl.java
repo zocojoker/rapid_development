@@ -7,6 +7,7 @@ import com.zoco.exception.RapidException;
 import com.zoco.mapper.UserMapper;
 import com.zoco.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import java.util.Map;
  * @author zoco
  * @creat 2018-09-19-15:53
  */
+@ComponentScan
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+
+	http://www.springframework.org/schema/task 	http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    <context:component-scan base-package="com.zoco">
+    </context:component-scan>
+    <!--spring_task简单版单任务可用-->
+    <!--<task:annotation-driven/>-->
+    <!--任务池版假如只有一个定时任务，可以用简单版；如果有多个定时任务，则要用任务池，不然它会顺序执行。
+两个任务的时间间隔为：执行时间+设定的定时间隔-->
+    <task:executor id="executor" pool-size="10"/>
+    <task:scheduler id="scheduler" pool-size="10"/>
+    <task:annotation-driven executor="executor" scheduler="scheduler"/>
+</beans>
