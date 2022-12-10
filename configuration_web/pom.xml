@@ -69,7 +69,7 @@
     </build>
     <properties>
         <!-- 主要依赖库的版本定义 -->
-        <spring.version>4.1.1.RELEASE</spring.version>
+        <spring.version>6.0.0</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
         <slf4j.version>1.7.5</slf4j.version>
